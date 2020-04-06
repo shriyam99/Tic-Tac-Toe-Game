@@ -1,0 +1,88 @@
+html{
+  height: 100%;
+}
+body{
+  /* background: #630acf; */
+  background-image: linear-gradient(to bottom right,#f0cf3c, #c7102e , #8d11c2);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+form{
+  background: rgba(255, 255, 255, 0.4);
+  color: rgb(50, 50, 50);
+  box-shadow: 20px 20px 30px rgba(50, 50, 50, 0.4);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  height: 60%;
+  width: 30%;
+}
+.joinById{
+  display: flex;
+  width: 100%;
+}
+button{
+  align-self: stretch;
+  flex: 1;
+}
+.joinById button{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.joinById input{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.joinRoom{
+  display: flex;
+  width: 100%;
+  justify-content: stretch;
+}
+.seperator{
+  display: flex;
+  width: 100%;
+}
+.seperator span{
+  text-align: center;
+  border-bottom: 1px solid rgb(50, 50, 50);
+  line-height: 0.1em;
+  margin: 10px 0 20px 0;
+  flex: 5;
+}
+.seperator h5{
+  flex: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+h1{
+  text-align: center;
+}
+
+/* h2 {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #000;
+   line-height: 0.1em;
+   margin: 10px 0 20px;
+}
+h2 span {
+    background:#fff;
+    padding:0 10px;
+} */
+@media only screen and (max-width: 768px) {
+  form{
+    width: auto;
+  }
+}
+@media only screen and (max-height: 420px) {
+  form{
+    height: auto;
+  }
+}
