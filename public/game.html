@@ -10,13 +10,35 @@
     <div class="mainWindow">
       <div class="loadingScreen card">
         <span id='loadingMsg'>Please Wait till oponent joins the room</span>
-        <span id='roomId'></span>
+        <span class='roomId'></span>
         <div class="spin"></div>
-        <button type="button" class="btn btn-outline-danger">Leave Room</button>
+        <button type="button" class="btn btn-outline-danger" onclick="leaveRoom()">Leave Game</button>
       </div>
       <div class="mainGame">
-        <p>Hello</p>
+        <div class="details">
+          <span id='players'>Henry v/s Jenny</span>
+          <span class='roomId'></span>
+          <span id='turn'>It's your turn</span>
+        </div>
+        <div class="game card">
+          <div class="gameRow">
+            <span id='box1' class="gameCol"><div class="gameColText">X</div></span>
+            <span id='box2' class="gameCol"><div class="gameColText">O</div></span>
+            <span id='box3' class="gameCol"><div class="gameColText">X</div></span>
+          </div>
+          <div class="gameRow">
+            <span id='box4' class="gameCol"><div class="gameColText">O</div></span>
+            <span id='box5' class="gameCol"><div class="gameColText">O</div></span>
+            <span id='box6' class="gameCol"><div class="gameColText">X</div></span>
+          </div><div class="gameRow">
+            <span id='box7' class="gameCol"><div class="gameColText">X</div></span>
+            <span id='box8' class="gameCol"><div class="gameColText">O</div></span>
+            <span id='box9' class="gameCol"><div class="gameColText">X</div></span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-danger" onclick="leaveRoom()">Leave Game</button>
       </div>
+
     </div>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Comic+Neue&display=swap" rel="stylesheet">

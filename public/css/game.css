@@ -1,9 +1,6 @@
-*{
-  font-family: 'Comic Neue', cursive;
-  color: #444;
-}
 html{
   height: 100%;
+
 }
 body{
   /* background: #630acf; */
@@ -18,26 +15,27 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 20px;
-  height: 50%;
-  width: 50%;
+  padding: 10px;
 }
 .mainWindow{
   width: 100%;
   height: 100%;
+  font-family: 'Comic Neue', cursive;
+  color: #444;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .loadingScreen.card{
-  border-radius: 30px;
+  height: 50%;
+  width: 50%;
+  border-radius: 20px;
   background: white;
 }
 .loadingScreen.card button{
   align-self: stretch;
 }
-#roomId{
+.roomId{
   font-weight: bold;
   text-align: center;
 }
@@ -49,6 +47,62 @@ body{
 .spin{
   flex:1;
   transform: translate3d(50%, 50%, 0)
+}
+
+.details{
+  margin: 20px;
+  font-size: 2vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#turn{
+  font-size: 2.5vw;
+}
+.mainGame{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.game.card{
+  background: rgba(255, 255, 255, 0.5);
+   margin-bottom: 30px;
+   border-radius: 30px;
+   height: 30vw;
+   width: 30vw;
+   display: flex;
+   align-items: stretch;
+   justify-content: space-around;
+}
+.gameRow{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.gameCol{
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 2px 2px 8px rgba(50, 50, 50, 0.7);
+  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
+  background: white;
+  font-size: 5vw;
+  text-align: center;
+  vertical-align: text-bottom;
+  display: flex;
+}
+.gameColText{
+  margin: auto;
+  font-family: 'Arial';
 }
 
 
@@ -77,12 +131,29 @@ body{
 }
 
 @media only screen and (max-width: 768px) {
-  .card{
+  .details{
+    font-size: 5vw;
+  }
+  #turn{
+    font-size: 7vw;
+  }
+  .loadingScreen.card{
     width: 75%;
+  }
+  .game.card{
+     height: 80vw;
+     width: 80vw;
+  }
+  .gameCol{
+    font-size: 8vw;
   }
 }
 @media only screen and (max-height: 600px) {
-  .card{
+  .loadingScreen.card{
     height: 350px;
+  }
+  .game.card{
+     height: 80vw;
+     width: 80vw;
   }
 }
