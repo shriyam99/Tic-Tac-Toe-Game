@@ -27,7 +27,7 @@ io.on('connection', (socket)=>{
         users.addUser(socket.id, params.displayName, id);
         socket.join(id);
         console.log(users.getUser(socket.id));
-        callback(null, `'User connected by creating room'${id}`);
+        callback(null, id);
       }
       else if(roomType=='joinById' && isValidString(params.roomId) && shortid.isValid(params.roomId) && params.roomId.length<10){
         users.addUser(socket.id, params.displayName, params.roomId);
@@ -35,7 +35,7 @@ io.on('connection', (socket)=>{
         if(users.getNumberOfUsers(params.roomId)>2)
           return callback('Something went wrong');
         console.log(users.getUser(socket.id));
-        callback(null, `'User connected by id'${params.roomId}`);
+        callback(null, params.roomId);
       }
       else{
         callback('Invalid ID provided');

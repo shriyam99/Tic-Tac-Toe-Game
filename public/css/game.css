@@ -1,0 +1,88 @@
+*{
+  font-family: 'Comic Neue', cursive;
+  color: #444;
+}
+html{
+  height: 100%;
+}
+body{
+  /* background: #630acf; */
+  background-image: linear-gradient(to bottom right,#43cea2, #185a9d);
+  width: 100%;
+  height: 100%;
+}
+.card{
+  box-shadow: 20px 20px 30px rgba(50, 50, 50, 0.4);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  height: 50%;
+  width: 50%;
+}
+.mainWindow{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingScreen.card{
+  border-radius: 30px;
+  background: white;
+}
+.loadingScreen.card button{
+  align-self: stretch;
+}
+#roomId{
+  font-weight: bold;
+  text-align: center;
+}
+#loadingMsg{
+  font-size: 20px;
+  text-align: center;
+  color: #444;
+}
+.spin{
+  flex:1;
+  transform: translate3d(50%, 50%, 0)
+}
+
+
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+.spin::before {
+  animation: 0.75s linear infinite spinner;
+  animation-play-state: inherit;
+  border: solid 3px rgba(50, 50, 50, 0.5);
+  border-bottom-color: powderblue;
+  border-radius: 50%;
+  content: "";
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  /* top: 10%;
+  left: 10%; */
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+}
+
+@media only screen and (max-width: 768px) {
+  .card{
+    width: 75%;
+  }
+}
+@media only screen and (max-height: 600px) {
+  .card{
+    height: 350px;
+  }
+}

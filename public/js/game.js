@@ -1,5 +1,6 @@
+var roomId;
 var sampleFunc = ()=>{
-
+  $('.mainGame').hide();
 }
 const socket = io();
 socket.on('connect', ()=>{
@@ -11,6 +12,8 @@ socket.on('connect', ()=>{
       window.location.href = '/';
     }
     console.log(res);
+    roomId = res;
+    $('#roomId').text(`Room ID: ${roomId}`);
   });
 });
 
