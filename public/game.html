@@ -16,24 +16,24 @@
       </div>
       <div class="mainGame">
         <div class="details">
-          <span id='players'>Henry v/s Jenny</span>
+          <span id='players'></span>
           <span class='roomId'></span>
-          <span id='turn'>It's your turn</span>
+          <span id='turn'></span>
         </div>
         <div class="game card">
           <div class="gameRow">
-            <span id='box1' class="gameCol"><div class="gameColText">X</div></span>
-            <span id='box2' class="gameCol"><div class="gameColText">O</div></span>
-            <span id='box3' class="gameCol"><div class="gameColText">X</div></span>
+            <span id='box1' class="gameCol"><div class="gameColText"></div></span>
+            <span id='box2' class="gameCol"><div class="gameColText"></div></span>
+            <span id='box3' class="gameCol"><div class="gameColText"></div></span>
           </div>
           <div class="gameRow">
-            <span id='box4' class="gameCol"><div class="gameColText">O</div></span>
-            <span id='box5' class="gameCol"><div class="gameColText">O</div></span>
-            <span id='box6' class="gameCol"><div class="gameColText">X</div></span>
+            <span id='box4' class="gameCol"><div class="gameColText"></div></span>
+            <span id='box5' class="gameCol"><div class="gameColText"></div></span>
+            <span id='box6' class="gameCol"><div class="gameColText"></div></span>
           </div><div class="gameRow">
-            <span id='box7' class="gameCol"><div class="gameColText">X</div></span>
-            <span id='box8' class="gameCol"><div class="gameColText">O</div></span>
-            <span id='box9' class="gameCol"><div class="gameColText">X</div></span>
+            <span id='box7' class="gameCol"><div class="gameColText"></div></span>
+            <span id='box8' class="gameCol"><div class="gameColText"></div></span>
+            <span id='box9' class="gameCol"><div class="gameColText"></div></span>
           </div>
         </div>
         <button type="button" class="btn btn-danger" onclick="leaveRoom()">Leave Game</button>
@@ -49,5 +49,6 @@
     <script src="/socket.io/socket.io.js" charset="utf-8"></script>
     <script src="./js/game.js" charset="utf-8"></script>
     <script src="./js/libs/searchToObject.js" charset="utf-8"></script>
+    <script src="./js/libs/utils.js" charset="utf-8"></script>
   </body>
 </html>

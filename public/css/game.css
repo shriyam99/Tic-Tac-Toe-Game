@@ -52,13 +52,13 @@ body{
 .details{
   margin: 20px;
   font-size: 2vw;
-  color: white;
+  color: #eee;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 #turn{
-  font-size: 2.5vw;
+  font-size: 1.5vw;
 }
 .mainGame{
   height: 100%;
