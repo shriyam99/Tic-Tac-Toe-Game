@@ -1,6 +1,7 @@
 var leaveRoom = ()=>{
-  if(confirm('Are u sure?'))
+  if(confirm('Are u sure?')){
     window.location.href = '/';
+  }
 }
 
 function turnGreen(){

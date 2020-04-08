@@ -106,12 +106,12 @@ io.on('connection', (socket)=>{
 
   socket.on('disconnect', ()=>{
     console.log('User disconnected');
-    io.to(users.getUser(socket.id).room).emit('endGame', {
-      isWinner: false,
-      tie: false,
-      opponentHasLeft: true
-    });
-    socket.leave(users.getUser(socket.id).room);
+    // io.to(users.getUser(socket.id).room).emit('endGame', {
+    //   isWinner: false,
+    //   tie: false,
+    //   opponentHasLeft: true
+    // });
+    // socket.leave(users.getUser(socket.id).room);
     users.removeUser(socket.id);
   })
 });
