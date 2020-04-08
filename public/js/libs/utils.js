@@ -69,3 +69,10 @@ function isMatchTied(){
   }
   return res;
 }
+
+function restartGame(){
+  var table = $('.gameCol');
+  for(var i=0; i<table.length; i++){
+    table[i].innerHTML = `<div class="gameColText"></div>`;
+  }
+}

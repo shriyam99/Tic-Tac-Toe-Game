@@ -60,7 +60,6 @@ io.on('connection', (socket)=>{
 
   socket.on('changeTurn', (res)=>{
     var user = users.getUser(socket.id);
-    // var opponent = users.getOpponent(socket.id);
     socket.broadcast.to(user.room).emit('updateDataSet', res);
     if(res.matchTied){
       io.to(user.room).emit('endGame', {
@@ -92,6 +91,18 @@ io.on('connection', (socket)=>{
       });
     }
   });
+
+  socket.on('restartGame', ()=>{
+    var user = users.getUser(socket.id);
+    socket.emit('startGame', {
+      turn: false,
+      letter: user.letter
+    });
+    socket.broadcast.to(user.room).emit('startGame', {
+      turn: true,
+      letter: user.letter==='X'? 'O': 'X'
+    });
+  })
 
   socket.on('disconnect', ()=>{
     console.log('User disconnected');

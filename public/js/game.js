@@ -57,21 +57,28 @@ socket.on('endGame', (data)=>{
   }
   else if(data.isWinner){
     alert(`You've won the match!`);
-    window.location.href='/';
+    restartGame();
+    socket.emit('restartGame');
   }
   else if(!data.isWinner && !data.tie){
     alert(`You've lost the match!`);
-    window.location.href= '/';
+    restartGame();
+    socket.emit('restartGame');
   }
   else {
-    alert(`TIE!!`);
-    window.location.href= '/';
+    alert(`Match TIE!!`);
+    restartGame();
+    socket.emit('restartGame');
   }
 });
 
 socket.on('playerNames', (data)=>{
   $('#players').text(`${data[0].toLowerCase()} v/s ${data[1].toLowerCase()}`);
 });
+
+// socket.on('restart', (res)=>{
+//     restart();
+// });
 
 socket.on('disconnect', ()=>{
   console.log('User disconnected');
