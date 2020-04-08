@@ -1,11 +1,11 @@
 var roomId;
 var hasGameBegun = false;
 var sampleFunc = ()=>{
+  $('.mainGame').hide();
 }
 const socket = io();
 
 socket.on('connect', ()=>{
-  $('.mainGame').hide();
   console.log('User connected');
   var params = searchToObject();
   socket.emit('join', params, (err, res)=>{
