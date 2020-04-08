@@ -7,6 +7,7 @@ const shortid = require('shortid');
 var {isValidString} = require('./utils/validation');
 var {Users} = require('./utils/users');
 var {isWinner} = require('./utils/winner');
+shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 const publicPath = path.join(__dirname, '../public');
 const app = express();
 const server = http.createServer(app);
@@ -18,8 +19,6 @@ app.use(express.static(publicPath));
 
 io.on('connection', (socket)=>{
   console.log('User connected');
-  shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
-
   socket.on('join', (params, callback)=>{
     users.removeUser(socket.id);
     if(isValidString(params.displayName) && isValidString(params.roomType)){
@@ -61,7 +60,14 @@ io.on('connection', (socket)=>{
   socket.on('changeTurn', (res)=>{
     var user = users.getUser(socket.id);
     socket.broadcast.to(user.room).emit('updateDataSet', res);
-    if(res.matchTied){
+    if(res.opponentHasLeft){
+      io.to(user.room).emit('endGame', {
+        isWinner: false,
+        tie: false,
+        opponentHasLeft: true
+      })
+    }
+    else if(res.matchTied){
       io.to(user.room).emit('endGame', {
         isWinner: false,
         tie: true,

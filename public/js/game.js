@@ -35,7 +35,8 @@ socket.on('startGame', (res)=>{
       socket.emit('changeTurn', {
         dataset,
         letter: res.letter,
-        matchTied: isMatchTied()
+        matchTied: isMatchTied(),
+        opponentHasLeft: false
       });
     });
     disableAllClicked();
@@ -75,10 +76,6 @@ socket.on('endGame', (data)=>{
 socket.on('playerNames', (data)=>{
   $('#players').text(`${data[0].toLowerCase()} v/s ${data[1].toLowerCase()}`);
 });
-
-// socket.on('restart', (res)=>{
-//     restart();
-// });
 
 socket.on('disconnect', ()=>{
   console.log('User disconnected');

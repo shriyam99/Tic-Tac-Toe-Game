@@ -1,8 +1,12 @@
 var leaveRoom = ()=>{
   if(confirm('Are u sure?')){
+    socket.emit('changeTurn', {
+      opponentHasLeft: true
+    });
     window.location.href = '/';
   }
 }
+
 
 function turnGreen(){
   var turn = $('#turn');
