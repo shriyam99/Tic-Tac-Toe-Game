@@ -80,4 +80,5 @@ function restartGame(){
   for(var i=0; i<table.length; i++){
     table[i].innerHTML = `<div class="gameColText"></div>`;
   }
+  turnRed();
 }
