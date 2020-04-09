@@ -1,7 +1,7 @@
 var roomId;
 var hasGameBegun = false;
 var sampleFunc = ()=>{
-  $('.mainGame').hide();
+  document.getElementsByClassName('mainGame')[0].style.display = 'none';
 }
 const socket = io();
 
